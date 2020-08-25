@@ -1,0 +1,17 @@
+.table thead th {
+  border-bottom: none;
+}
+.tablasTotal {
+  font-size: 0.8rem;
+  line-height: 2px;
+}
+.headerTabla {
+  padding-top: 26px;
+}
+.colorTotal {
+  background-color: #ffc107 !important;
+}
+
+.colorTOtal {
+  cursor: grab;
+}
