@@ -1,0 +1,31 @@
+.filtro {
+  font-size: 0.8rem;
+}
+
+.p-dropdown .p-dropdown-label.p-placeholder {
+  font-size: 1rem;
+  line-height: 0.5rem;
+}
+
+.p-dropdown .p-dropdown-label {
+  padding-right: 1rem;
+}
+
+.p-dropdown-trigger-icon, .p-dropdown .p-dropdown-clear-icon {
+  color: #1f2d40 !important;
+}
+.p-dropdown .p-dropdown-clear-icon {
+  font-size: .8rem !important;
+  top: 65% !important;
+}
+
+.cat label {
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+
+.p-dropdown-label {
+  color: #1f2d40 !important;
+  font-size: 0.9rem !important;
+  line-height: 0;
+}

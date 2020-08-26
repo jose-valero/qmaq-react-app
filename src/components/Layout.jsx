@@ -1,4 +1,11 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import Menu from './Menu';
 
-export const Layout = (props) => <Container></Container>;
+const Layout = ({ children }) => (
+  <div className="container">
+    <Menu />
+    {children}
+  </div>
+);
+
+export default Layout
