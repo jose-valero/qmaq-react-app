@@ -3,7 +3,7 @@ import { GET_DATA, LOADING, ERROR } from '../types/dataTypes';
 const INITIAL_STATE = {
   valores: [],
   loading: false,
-  error: '',
+  error: null,
 };
 
 export default (state = INITIAL_STATE, action) => {
