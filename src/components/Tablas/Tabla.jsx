@@ -6,21 +6,16 @@ import { connect } from 'react-redux';
 const Tabla = (props) => {
   const ponerData = () =>
     props.valores.map((valor, key) => (
-      <tr key={valor}>
+      <tr key={key}>
         <td>{valor.cif}</td>
         <td>{valor.fob}</td>
         <td>{valor.cantidad_declarada}</td>
         <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
-        <td>{key}</td>
       </tr>
     ));
+
+  console.log(props.valores);
+
   return (
     <div>
       <div className="d-flex table-responsive tablasTotal">
