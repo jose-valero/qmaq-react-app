@@ -4,17 +4,47 @@ import '../../assets/styles/tabla.css';
 import { connect } from 'react-redux';
 
 const Tabla = (props) => {
-  const ponerData = () =>
-    props.valores.map((valor, key) => (
-      <tr key={key}>
-        <td>{valor.cif}</td>
-        <td>{valor.fob}</td>
-        <td>{valor.cantidad_declarada}</td>
-        <td>{key}</td>
-      </tr>
-    ));
+  const ponerMonth = () =>
+    props.valores.map((month) =>
+      Object.values(month).map((month__2) =>
+        Object.keys(month__2).map((month__3, index) => (
+          <th key={index} className="text-center text-nowrap">
+            {month__3}
+          </th>
+        ))
+      )
+    );
 
-  console.log(props.valores);
+  const ponerYear = () =>
+    props.valores.map((year) =>
+      Object.keys(year).map((year__2, index) => (
+        <tr key={index}>
+          <th colSpan="15" className="bg-dark text-white text-center">
+            {year__2}
+          </th>
+        </tr>
+      ))
+    );
+
+  const ponerData = () =>
+    props.valores.map((valor) =>
+      Object.values(valor).map((valor__2) =>
+        Object.values(valor__2).map((valor__3, index) => (
+          <React.Fragment>
+            {' '}
+            <tr key={index}>
+              <td>{valor__3.cantidad_declarada}</td>
+            </tr>
+            <tr key={index}>
+              <td>{valor__3.fob}</td>
+            </tr>
+            <tr key={index}>
+              <td>{valor__3.cif}</td>
+            </tr>
+          </React.Fragment>
+        ))
+      )
+    );
 
   return (
     <div>
@@ -33,25 +63,9 @@ const Tabla = (props) => {
         </table>
         <table className="table table-bordered">
           <thead className="thead-light">
-            <tr>
-              <th colSpan="15" className="bg-dark text-white text-center">
-                year
-              </th>
-            </tr>
-            <tr>
-              <th className="text-center text-nowrap">ene</th>
-              <th className="text-center text-nowrap">feb</th>
-              <th className="text-center text-nowrap">mar</th>
-              <th className="text-center text-nowrap">abr</th>
-              <th className="text-center text-nowrap">may</th>
-              <th className="text-center text-nowrap">jun</th>
-              <th className="text-center text-nowrap">jul</th>
-              <th className="text-center text-nowrap">ago</th>
-              <th className="text-center text-nowrap">sep</th>
-              <th className="text-center text-nowrap">oct</th>
-              <th className="text-center text-nowrap">nov</th>
-              <th className="text-center text-nowrap">dic</th>
-            </tr>
+            {ponerYear()}
+
+            <tr>{ponerMonth()}</tr>
           </thead>
           <tbody>{ponerData()}</tbody>
         </table>
